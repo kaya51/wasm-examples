@@ -1,0 +1,9 @@
+{
+	"background": {
+		"page": "background.html"
+	},
+	"content_security_policy": "script-src 'self' 'wasm-unsafe-eval' 'unsafe-eval'; default-src 'self';",
+	"manifest_version": 2,
+	"name": "MV2 WASM Example 4",
+	"version": "1.0"
+}

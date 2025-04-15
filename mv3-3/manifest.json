@@ -1,0 +1,12 @@
+{
+	"background": {
+		"service_worker": "background.js",
+		"type": "module"
+	},
+	"content_security_policy": {
+		"extension_pages": "script-src 'self' 'wasm-unsafe-eval'; default-src 'self';"
+	},
+	"manifest_version": 3,
+	"name": "MV3 WASM Example 3",
+	"version": "1.0"
+}

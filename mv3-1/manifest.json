@@ -1,0 +1,9 @@
+{
+	"background": {
+		"service_worker": "background.js",
+		"type": "module"
+	},
+	"manifest_version": 3,
+	"name": "MV3 WASM Example 1",
+	"version": "1.0"
+}
