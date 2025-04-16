@@ -7956,10 +7956,6 @@ var ko = (() => {
       var r = Je(e.name || "unknownFunctionName", function() {
       });
       r.prototype = e.prototype;
-	//   console.log(e.name, n , t);
-	//   for (var n = 0; n < t.length; ++n) {
-	// 	console.log(self[t[n]]);
-	//   }
       var n = new r(), _ = e.apply(n, t);
       return _ instanceof Object ? _ : n;
     }
