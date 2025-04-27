@@ -1793,10 +1793,14 @@ export interface IMagickImage extends IDisposable {
 	charcoal(): void;
 	charcoal(radius: number, sigma: number): void;
 	chop(geometry: MagickGeometry): void;
+	chopHorizontal(x: number, width: number): void;
+	chopVertical(y: number, height: number): void;
 	clahe(xTiles: number, yTiles: number, numberBins: number, clipLimit: number): void;
 	clahe(xTiles: Percentage, yTiles: Percentage, numberBins: number, clipLimit: number): void;
 	clone<TReturnType>(func: SyncImageCallback<TReturnType>): TReturnType;
 	clone<TReturnType>(func: AsyncImageCallback<TReturnType>): Promise<TReturnType>;
+	cloneArea<TReturnType>(geometry: MagickGeometry, func: SyncImageCallback<TReturnType>): TReturnType;
+	cloneArea<TReturnType>(geometry: MagickGeometry, func: AsyncImageCallback<TReturnType>): Promise<TReturnType>;
 	colorAlpha(color: IMagickColor): void;
 	compare(image: IMagickImage, metric: ErrorMetric): number;
 	compare<TReturnType>(image: IMagickImage, settings: CompareSettings, func: (compareResult: CompareResult) => TReturnType): TReturnType;
@@ -2114,10 +2118,14 @@ export declare class MagickImage extends NativeInstance implements IMagickImage 
 	charcoal(): void;
 	charcoal(radius: number, sigma: number): void;
 	chop(geometry: MagickGeometry): void;
+	chopHorizontal(x: number, width: number): void;
+	chopVertical(y: number, height: number): void;
 	clahe(xTiles: number, yTiles: number, numberBins: number, clipLimit: number): void;
 	clahe(xTiles: Percentage, yTiles: Percentage, numberBins: number, clipLimit: number): void;
 	clone<TReturnType>(func: SyncImageCallback<TReturnType>): TReturnType;
 	clone<TReturnType>(func: AsyncImageCallback<TReturnType>): Promise<TReturnType>;
+	cloneArea<TReturnType>(geometry: MagickGeometry, func: SyncImageCallback<TReturnType>): TReturnType;
+	cloneArea<TReturnType>(geometry: MagickGeometry, func: AsyncImageCallback<TReturnType>): Promise<TReturnType>;
 	colorAlpha(color: IMagickColor): void;
 	compare(image: IMagickImage, metric: ErrorMetric): number;
 	compare(image: IMagickImage, metric: ErrorMetric, channels: Channels): number;
@@ -2643,6 +2651,9 @@ export declare class Magick {
 export declare class Quantum {
 	static get depth(): number;
 	static get max(): number;
+}
+export declare class OffsetInfo {
+	static _use<TReturnType>(x: number, y: number, func: (primaryInfoPtr: number) => TReturnType | Promise<TReturnType>): TReturnType | Promise<TReturnType>;
 }
 
 export {
